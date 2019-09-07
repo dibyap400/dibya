@@ -1,24 +1,30 @@
 pipeline {
-  agent any
-  stages {
-    stage('Stage1') {
-      parallel {
-        stage('Stage1') {
-          steps {
-            echo 'HelloPipeline1'
-          }
+    agent anythinginbmc
+
+    stages {
+        stage('Build Assets') {
+           
+            steps {
+                echo 'Building Assets'
+            }
         }
-        stage('Stage2') {
-          steps {
-            echo 'Hello from Stage2'
-          }
+        stage('Test') {
+           
+            steps {
+                echo 'Testing stuff...'
+            }
         }
-      }
-    }
-    stage('BlueStage1') {
-      steps {
-        sleep 1
-      }
-    }
-  }
+    
+	stage('NewStage') {
+           
+            steps {
+                echo 'New stage for checking JF'
+            }
+        }
+	
+	
+	}
+	
+	
+	
 }
